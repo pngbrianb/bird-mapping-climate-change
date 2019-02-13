@@ -29,7 +29,7 @@ I'll eschew a typical data dictionary table because large portions of the data a
 
 ### Base Data
 
-[Location](./bird-species)
+[Location](./bird-species) (Once downloaded and populated)
 
 - **geometry** - nested layer containing Shapely MultiPolygon objects nested in 10 or 20 layers
 - **layers** - each layer relates to one Emissions Scenario and date, plus the 2000 observed data, for the BBS and/or CBC survey period.
@@ -65,13 +65,13 @@ I'll eschew a typical data dictionary table because large portions of the data a
 
 ### Layer-Separated Data
 
-[Location](./birds-data)
+[Location](./birds-data) (once unzipped)
 - **geometry** - inherited from the base data, but rather than containing all the layers for a given bird species, the GeoDataFrames in from this stage of processing contain a row for every bird species, each observation containing a single MultiPolygon relating to the Emissions Scenario to which the GeoDataFrame refers.
 - **layers** - Each GeoDataFrame relates toa single layer. The ones I selected for my own project are the 2000 historical data and the predictions in the A2 family of predictions. These are pessimistic of future greenhouse gas emissions, assuming that every country acts only in its own interest. I selected for this family of Scenarios because the resulting maps would show large amounts of change and the scenario is at least as likely as any more optimistic ones to come to pass.
 
 ### Aggregate GeoDataFrames
 
-[Location](./birds-data)
+[Location](./birds-data) (once unzipped)
 - **geometry** - each row represents a square defined in my second notebook. The squares map together to fill the area of the Layer-Separated GeoDataFrames with 99x99 squares.
 - **count** - how many species of birds' ranges intersect the defined square.
 
